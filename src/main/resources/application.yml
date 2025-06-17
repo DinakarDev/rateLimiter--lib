@@ -1,0 +1,14 @@
+spring:
+  profiles:
+    active: redis-token   # ✅ Correct location
+
+  data:
+    redis:
+      host: localhost
+      port: 6379
+
+ratelimiter:
+  backend: redis
+  strategy: token-bucket
+  capacity: 50
+  refillRate: 5
